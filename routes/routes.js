@@ -12,6 +12,6 @@ router.get("/toDoList", getToDoList);
 router.post("/addItem", addItem);
 router.post("/deleteItem/:id", deleteItem);
 router.post("/updateItem/:id", updateItem);
-router.get("/countDoneItem", countDoneItem);
+router.get("/countDoneItem/:status", countDoneItem);
 
 module.exports = router;

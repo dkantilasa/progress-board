@@ -86,15 +86,16 @@ const updateItem = (req, res) => {
 
 // untuk memghitung spesifik data
 const countDoneItem = (req, res) => {
+  const status = req.params.status;
   db.query(
     "SELECT * FROM todos WHERE status like ?",
-    ["done"],
+    [status],
     (error, result) => {
       if (error) {
         console.log(error);
       }
-      console.log(result);
-      res.send({ success: true, data: result });
+      const temp = result;
+      res.send({ success: true, data: temp.length });
     }
   );
 };
